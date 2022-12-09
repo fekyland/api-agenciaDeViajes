@@ -1,26 +1,3 @@
-/*const {Clientes} = require("../models/index");
-
-const ClienteController = {};
-
-ClienteController.findAll = (req, res) => {
-
-    Clientes.findAll().then((data) => {
-            res.send(data);
-
-    });
-
-};
-
-ClienteController.findByPk = (req, res) => {
-    const id = req.params.id;
-
-  Clientes.findByPk(id).then((data) => {
-    res.send(data);
-  });
-};*/
-
-
-
 const { Clientes , Reservas } = require ("../models");
 const { Op } = require("sequelize");
 //const hoteles = require("../models/hoteles.js");

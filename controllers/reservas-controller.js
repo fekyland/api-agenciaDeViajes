@@ -1,6 +1,6 @@
 const { Reservas, Clientes  } = require ("../models");
 const { Op } = require("sequelize");
-//const hoteles = require("../models/hoteles.js");
+
 
 const ReservaController= {};
 
