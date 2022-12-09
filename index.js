@@ -1,6 +1,9 @@
-const express = require('express');
-const app = express();
+var express = require('express');
+var router = express.Router();
 
-app.listen(3001,()=>console.log('Servidor levantado en 3001'));
+/* GET home page. */
+router.get('/', function(req, res, next) {
+  res.render('index', { title: 'Express' });
+});
 
-app.get('/',(req, res)=> res.send('Hello World!'));
+module.exports = router;
