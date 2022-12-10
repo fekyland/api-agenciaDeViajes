@@ -7,13 +7,14 @@ const db = require('./db/db');
 const router = require("./router");
 const cors = require("cors");     //agrege configuracion cors
 
-var app = express();
+
 const corsOptions = {
   origin: "*",
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   preflightContinue: false,
   optionsSuccessStatus: 204,
 };
+var app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
