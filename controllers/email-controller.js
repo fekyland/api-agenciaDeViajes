@@ -10,7 +10,8 @@ const EmailController= {};
       try {
          const data = await Clientes.findAll({
             where: { email : { [Op.like]: `%${email}%` } },
-            include: [{ model: Reservas, as: "reservas",attributes: { exclude: ['importe']} }],
+            include: [{ model: Reservas, as: "reservas", attributes: { exclude: ['importe']}}],
+            
          });
    
          if (data.length > 0) {
@@ -22,7 +23,7 @@ const EmailController= {};
          }
       } catch (error) {
          res.status(500).send({
-            message: `Error retreiving user retrieving with name=${email}.`,
+            message: `Error retreiving user retrieving with name=${name}.`,
          });
       }
    };

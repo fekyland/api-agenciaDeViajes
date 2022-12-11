@@ -9,8 +9,9 @@ const FechaInController= {};
    
       try {
          const data = await Reservas.findAll({
-            where: { fecha_entrada : { [Op.like]: `%${name}%` } ,attributes: { exclude: ['importe'] } },
+            where: { fecha_entrada : { [Op.like]: `%${name}%` }   },
             include: [{ model: Clientes, as: "id_cliente_cliente" }],
+            attributes: { exclude: ['importe'] }
          });
    
          if (data.length > 0) {

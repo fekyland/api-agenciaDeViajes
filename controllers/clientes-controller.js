@@ -22,7 +22,7 @@ ClienteController.getAll = async (req, res) => {
     
         try {
           const data = await Clientes.findByPk(id, {
-             include: [{ model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}}],
+            include: [{model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}, include: {model: Hoteles ,as: "id_hotel_hotele"} }]
           });
     
           if (data) {
@@ -46,7 +46,7 @@ ClienteController.getAll = async (req, res) => {
       try {
          const data = await Clientes.findAll({
             where: { Nombre : { [Op.like]: `%${name}%` } },
-            include: [{ model: Reservas, as: "reservas",attributes: { exclude: ['importe']} }],
+            include: [{model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}, include: {model: Hoteles ,as: "id_hotel_hotele"} }]
          });
    
          if (data.length > 0) {
