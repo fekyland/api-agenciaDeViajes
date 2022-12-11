@@ -8,7 +8,7 @@ ClienteController.getAll = async (req, res) => {
     try {
       const data = await Clientes.findAll({
       include: [{model: Reservas, as: "reservas", attributes: { exclude: ['importe'] }},
-                {model: Hoteles ,as: "id_hotel_hotele"}
+               
       ],
    
       });
