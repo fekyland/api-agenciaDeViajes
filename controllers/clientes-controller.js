@@ -1,14 +1,16 @@
-const { Clientes , Reservas } = require ("../models");
+const { Clientes , Reservas , Hoteles } = require ("../models");
 const { Op } = require("sequelize");
-//const hoteles = require("../models/hoteles.js");
+
 
 const ClienteController= {};
 
 ClienteController.getAll = async (req, res) => {
     try {
       const data = await Clientes.findAll({
-      include: [{model: Reservas, as: "reservas"}]
-     
+      include: [{model: Reservas, as: "reservas", attributes: { exclude: ['importe'] }},
+                {model: Hoteles ,as: "id_hotel_hotele"}
+      ],
+   
       });
       res.json(data);
     } catch (error) {
@@ -23,7 +25,7 @@ ClienteController.getAll = async (req, res) => {
     
         try {
           const data = await Clientes.findByPk(id, {
-             include: [{ model: Reservas, as: "reservas" }]
+             include: [{ model: Reservas, as: "reservas" }],
           });
     
           if (data) {

@@ -1,13 +1,8 @@
-/*var express = require('express');
+var express = require('express');
 var router = express.Router();
 
-const ClienteController = require("../controllers/clientes-controller");
-//const clientes = require('../models/clientes');
+const FechaInController = require('../controllers/fechaIn-controller');
 
-router.get("/", ClienteController.getAll);
+router.get("/:fechain", FechaInController.getByFechaIn);
 
-router.get("/:id", ClienteController.getById);
-
-router.get("/nombres/:name", ClienteController.getByName);
-
-module.exports = router;*/
+module.exports = router;
