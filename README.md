@@ -34,81 +34,99 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Write about 1-2 paragraphs describing the purpose of your project.
+Agencia de viajes is an api open source that enable users to search hotel reservations whith any data of clients attributes(name,id,email,phone) to stick with their reservations attributes (name of hotels,dates of concurrency,reservation id,)a get full informed about de client history reservation and hotels that they stayed or staying 
 
 ## 🏁 Getting Started <a name = "getting_started"></a>
 
-Project Support is an open source platform that enable users share causes they're passionate about and actively involved with with the hopes of connecting with other users equally interested in working with them on the given cause.
+
 
 ### Prerequisites
 
-What things you need to install the software and how to install them.
+Agencia de viajes API has this dependencies
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "~4.16.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "node": "^19.2.0",
+    "nodemon": "^2.0.20",
+    "sequelize": "^6.26.0",
+    "sequelize-auto": "^0.8.8"
 
-```
-Give examples
-```
 
 ### Installing
+First of all you need to install nodeJS at https://nodejs.org/es/download/
+second step
+clone our repository :
 
-A step by step series of examples that tell you how to get a development env running.
+git clone https://github.com/fekyland/api-agenciaDeViajes.git
 
-Say what the step will be
+our package.json has all depencies to start de program,only you have to run npm i and node will install all the de dependencies 
 
-```
-Give the example
-```
 
-And repeat
+## 🔧 Running the API <a name = "tests"></a>
 
-```
-until finished
-```
+run nodemon to run the server 
 
-End with an example of getting some data out of the system or using it for a little demo.
-
-## 🔧 Running the tests <a name = "tests"></a>
-
-Explain how to run the automated tests for this system.
+type "run start nodemon" 
 
 ### Break down into end to end tests
 
-Explain what these tests test and why
+API Endpoints
+| HTTP Verbs | Endpoints | Action |
+| --- | --- | --- |
+| GET | /clientes/ | To get a list of clientes |
+| GET | /clientes/id/id:| To search clients with their id (dni identification) |
+| GET | /clientes/nombres/:nombre | To search clients by name |
+  GET | /telefonos/:telefono | search by telephone number |
+| GET | /reservas/ | To retrieve the list of all reservas |
+| GET | /reservas/id/:id| To retrieve details of reservas including clientes and hoteles where they been |
+| GET | /fechain/:fechain | search dates of incoming clientes to de hotels |
+| GET | /fechaout/:fechaout | search dates of incoming clientes to de hotels |
+| GET | /hoteles/nombre | get a list of hotels |
+| GET | /hoteles/nombre/:nombre | search for a particular hotel by name|
 
-```
-Give an example
-```
 
-### And coding style tests
 
-Explain what these tests test and why
-
-```
-Give an example
-```
 
 ## 🎈 Usage <a name="usage"></a>
 
-Add notes about how to use the system.
+example
+
+put on your browser http://localhost:3000/fechain/1900-01-01 this give you de list of clients
+that check in on that date
+
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
-Add additional notes about how to deploy this on a live system.
+for a deployment and get a live system you can set up a database on railway on the same models clientes,reservas and hoteles tables and get a live database,and set up config.json to set the same variables from your database server
+production": {
+    "username": "ooort",
+    "password": "passeord",
+    "database": "railway",
+    "host": "railway info",
+    "port": por number
+    "dialect": "yout database",
+    "use_env_variable": "database_url"
 
 ## ⛏️ Built Using <a name = "built_using"></a>
 
-- [MongoDB](https://www.mongodb.com/) - Database
+- [Mysql](https://www.mysql.com/) - Database
 - [Express](https://expressjs.com/) - Server Framework
-- [VueJs](https://vuejs.org/) - Web Framework
+- [Sequelize](https://sequelize.org/) - TypeScript and Node.js ORM 
 - [NodeJs](https://nodejs.org/en/) - Server Environment
+- [Squelize](https://sequelize.org/) - Server Environment
 
 ## ✍️ Authors <a name = "authors"></a>
 
-- [@kylelobo](https://github.com/kylelobo) - Idea & Initial work
+- [@fekyland](https://github.com/fekyland) -  Initial work
 
-See also the list of [contributors](https://github.com/kylelobo/The-Documentation-Compendium/contributors) who participated in this project.
+
 
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
-- Hat tip to anyone whose code was used
-- Inspiration
-- References
+- all geekhub classroom companions
+

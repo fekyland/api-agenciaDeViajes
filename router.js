@@ -15,7 +15,7 @@ router.use('/hoteles', hotelesRouter);
 router.use('/reservas', reservasRouter);
 router.use('/fechain', fechainRouter);
 router.use('/fechaout',fechaoutRouter);
-router.use('/telefono', telefonoRouter);
+router.use('/telefonos', telefonoRouter);
 router.use('/emails', emailsRouter);
 
 

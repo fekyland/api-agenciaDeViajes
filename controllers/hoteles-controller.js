@@ -1,8 +1,20 @@
-const { Hoteles , Reservas , Clientes } = require ("../models");
+const { Hoteles , Reservas } = require ("../models");
 const { Op } = require("sequelize");
 
 const HotelController= {};
 
+HotelController.getAll = async (req, res) => {
+   try {
+     const data = await Hoteles.findAll({
+     
+     });
+     res.json(data);
+   } catch (error) {
+     res.status(500).send({
+       message : "Some error ocurred whiles retrieving users."
+     });
+   }
+ };
     HotelController.getByHotel = async (req, res) => {
       const nombre = req.params.hotel;
    
