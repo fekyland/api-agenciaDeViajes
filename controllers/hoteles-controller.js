@@ -21,7 +21,7 @@ HotelController.getAll = async (req, res) => {
       try {
          const data = await Hoteles.findAll({
             where: { nombre_hotel : { [Op.like]: `%${nombre}%` } },
-            include: [{ model: Reservas, as: "reservas" , attributes: { exclude: ['importe'] } },
+            include: [{ model: Reservas, as: "reservas" },
 
          ],
          });

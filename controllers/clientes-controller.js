@@ -7,12 +7,12 @@ const ClienteController= {};
 ClienteController.getAll = async (req, res) => {
     try {
       const data = await Clientes.findAll({
-      include: [{model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}, include: {model: Hoteles ,as: "id_hotel_hotele"} }]
+      include: [{model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}, include: {model: Hoteles ,as: "id_hotel_hotele"} }] //TODO: incluir importe
       });
       res.json(data);
     } catch (error) {
       res.status(500).send({
-        message : "Some error ocurred whiles retrieving users."
+        message : "Some error ocurred whiles retrieving clientes."
       });
     }
   };
@@ -22,7 +22,7 @@ ClienteController.getAll = async (req, res) => {
     
         try {
           const data = await Clientes.findByPk(id, {
-            include: [{model: Reservas, as: "reservas" ,attributes: { exclude: ['importe']}, include: {model: Hoteles ,as: "id_hotel_hotele"} }]
+            include: [{model: Reservas, as: "reservas" , include: {model: Hoteles ,as: "id_hotel_hotele"} }]
           });
     
           if (data) {

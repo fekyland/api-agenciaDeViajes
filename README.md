@@ -45,34 +45,19 @@ Agencia de viajes is an api open source that enable users to search hotel reserv
 
 ### Prerequisites
 
-Agencia de viajes API has this dependencies
-    "cookie-parser": "~1.4.4",
-    "cors": "^2.8.5",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "jade": "~1.11.0",
-    "morgan": "~1.9.1",
-    "mysql2": "^2.3.3",
-    "node": "^19.2.0",
-    "nodemon": "^2.0.20",
-    "sequelize": "^6.26.0",
-    "sequelize-auto": "^0.8.8"
+for using this api you have to get NODEJS
 
 
 ### Installing
-First of all you need to install nodeJS at https://nodejs.org/es/download/
-second step
-clone our repository :
 
-git clone https://github.com/fekyland/api-agenciaDeViajes.git
+npm install
 
 our package.json has all depencies to start de program,only you have to run npm i and node will install all the de dependencies 
 
 
 ## 🔧 Running the API <a name = "tests"></a>
 
-run nodemon to run the server 
+run nodemon to start the server 
 
 type "run start nodemon" 
 
@@ -92,18 +77,19 @@ API Endpoints
 | GET | /hoteles/nombre | get a list of hotels |
 | GET | /hoteles/nombre/:nombre | search for a particular hotel by name|
 
-
-
-
 ## 🎈 Usage <a name="usage"></a>
 
 example
+
+npm run dev
 
 put on your browser http://localhost:3000/fechain/1900-01-01 this give you de list of clients
 that check in on that date
 
 
 ## 🚀 Deployment <a name = "deployment"></a>
+
+example : https://api-agenciadeviajes-production.up.railway.app/
 
 for a deployment and get a live system you can set up a database on railway on the same models clientes,reservas and hoteles tables and get a live database,and set up config.json to set the same variables from your database server
 production": {
@@ -121,15 +107,13 @@ production": {
 - [Express](https://expressjs.com/) - Server Framework
 - [Sequelize](https://sequelize.org/) - TypeScript and Node.js ORM 
 - [NodeJs](https://nodejs.org/en/) - Server Environment
-- [Squelize](https://sequelize.org/) - Server Environment
+
 
 ## ✍️ Authors <a name = "authors"></a>
 
 - [@fekyland](https://github.com/fekyland) -  Initial work
 
 
-
 ## 🎉 Acknowledgements <a name = "acknowledgement"></a>
 
 - all geekhub classroom companions
-

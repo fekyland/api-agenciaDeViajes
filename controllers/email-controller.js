@@ -10,7 +10,7 @@ const EmailController= {};
       try {
          const data = await Clientes.findAll({
             where: { email : { [Op.like]: `%${email}%` } },
-            include: [{ model: Reservas, as: "reservas", attributes: { exclude: ['importe']}}],
+            include: [{ model: Reservas, as: "reservas"}],
             
          });
    

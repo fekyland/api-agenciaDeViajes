@@ -10,7 +10,7 @@ const TelefonoController= {};
       try {
          const data = await Clientes.findAll({
             where: { Telefono : { [Op.like]: `%${telefono}%` } },
-            include: [{ model: Reservas, as: "reservas" , attributes: { exclude: ['importe'] } }],
+            include: [{ model: Reservas, as: "reservas" }],
          });
    
          if (data.length > 0) {

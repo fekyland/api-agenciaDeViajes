@@ -25,7 +25,7 @@ ReservaController.getAll = async (req, res) => {
         try {
           const data = await Reservas.findByPk(id, {
              include: [{ model: Clientes, as: "id_cliente_cliente" }],
-             attributes: { exclude: ['importe'] }
+          
           });
     
           if (data) {
