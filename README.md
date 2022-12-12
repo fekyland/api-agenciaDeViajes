@@ -32,10 +32,9 @@
 
 ## 🧐 About <a name = "about"></a>
 
-Agencia de viajes is an api open source that enable users to search hotel reservations whith any data of clients attributes(name,id,email,phone) to stick with their reservations attributes (name of hotels,dates of concurrency,reservation id,)a get full informed about de client history reservation and hotels that they stayed or staying 
+Agencia de viajes is an api open source that enable users to search hotel reservations with any data of clients attributes (name,id,email,phone) to stick with their reservations attributes (name of hotels,dates of concurrency,reservation id,)a get full informed about de client history reservation and hotels that they stayed or staying 
 
-![Screenshot](/img/agenciade%20viajes.png)
-
+![Screenshot](/img/agencia.png)
 
 
 
@@ -50,7 +49,7 @@ for using this api you have to get NODEJS
 
 ### Installing
 
-npm install
+npm install i
 
 our package.json has all depencies to start de program,only you have to run npm i and node will install all the de dependencies 
 
@@ -64,40 +63,39 @@ type "run start nodemon"
 ### Break down into end to end tests
 
 API Endpoints
-| HTTP Verbs | Endpoints | Action |
+| HTTP Verbs   | Endpoints | Action |
 | --- | --- | --- |
 | GET | /clientes/ | To get a list of clientes |
 | GET | /clientes/id/id:| To search clients with their id (dni identification) |
 | GET | /clientes/nombres/:nombre | To search clients by name |
-  GET | /telefonos/:telefono | search by telephone number |
+  GET | /clientes/telefono/:telefono | search by telephone number |
 | GET | /reservas/ | To retrieve the list of all reservas |
 | GET | /reservas/id/:id| To retrieve details of reservas including clientes and hoteles where they been |
-| GET | /fechain/:fechain | search dates of incoming clientes to de hotels |
-| GET | /fechaout/:fechaout | search dates of incoming clientes to de hotels |
+| GET | /clientes/fechain/:fechain | search dates of incoming clientes to de hotels |
+| GET | /clientes/fechaout/:fechaout | search dates of incoming clientes to de hotels |
 | GET | /hoteles/nombre | get a list of hotels |
 | GET | /hoteles/nombre/:nombre | search for a particular hotel by name|
 
 ## 🎈 Usage <a name="usage"></a>
 
-example
 
-npm run dev
+type : npm run dev
 
-put on your browser http://localhost:3000/fechain/1900-01-01 this give you de list of clients
-that check in on that date
+put on your browser http://localhost:3000/clientes/ this give you de list of clients
 
 
 ## 🚀 Deployment <a name = "deployment"></a>
 
+for a deployment and get a live system, you can set up a database on railway on the same models clientes,reservas and hoteles tables and get a live database,and set up config.json to set the same variables from your database server
+
 example : https://api-agenciadeviajes-production.up.railway.app/
 
-for a deployment and get a live system you can set up a database on railway on the same models clientes,reservas and hoteles tables and get a live database,and set up config.json to set the same variables from your database server
 production": {
-    "username": "ooort",
-    "password": "passeord",
+    "username": "yyyyyy",
+    "password": "xxxxxx",
     "database": "railway",
     "host": "railway info",
-    "port": por number
+    "port": por number,
     "dialect": "yout database",
     "use_env_variable": "database_url"
 
