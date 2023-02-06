@@ -1,11 +1,11 @@
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+var cookieParser = require('cookie-parser'); //midellware de cokies
+var logger = require('morgan'); // middelware de registro
 const db = require('./db/db');
 const router = require("./router");
-const cors = require("cors");     //agrege configuracion cors
+const cors = require("cors");     //middelware de seguridad
 
 
 const corsOptions = {
@@ -25,7 +25,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use(cors(corsOptions));
 app.use(router);
 
 // catch 404 and forward to error handler
